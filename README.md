@@ -13,3 +13,6 @@
 
 Аскинема игры brain-progression:
 [![asciicast](https://asciinema.org/a/g8VRrNY7RJXNsqSTSUdbxqY5G.svg)](https://asciinema.org/a/g8VRrNY7RJXNsqSTSUdbxqY5G)
+
+Аскинема игры brain-prime:
+[![asciicast](https://asciinema.org/a/dcx5oK0MPY3im7vr0G8CQVCOM.svg)](https://asciinema.org/a/dcx5oK0MPY3im7vr0G8CQVCOM)
