@@ -2,7 +2,7 @@ import {gameDataGen} from "./game-layout.js";
 
 export const gameGcd = () => {
     // сборка данных для игры
-    const rules = "";
+    const rules = "Find the greatest common divisor of given numbers.";
 
     // вызов функции-интерфейса для создания данных в формате объекта
     const gameGcdData = gameDataGen(rules, genData);
