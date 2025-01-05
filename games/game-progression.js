@@ -25,11 +25,12 @@ const genData = () => {
 
 const createProgression = () => {
     const progression = [];
-    const progressionLength = Math.round(Math.random() * (10 - 5) + 5); 
-    const step = Math.round(Math.random() * 10);
-    const first = Math.round(Math.random() * 100);
-    const hiddenElementIndex = Math.round(Math.random() * progressionLength);
-    let rightAnswer = first + step * hiddenElementIndex;
+    const progressionLength = Math.floor(Math.random() * (10 - 5 + 1)) + 5; // длина прогрессии от 5 до 10 
+    const step = Math.floor(Math.random() * 10) + 1; // шаг от 1 до 10
+    const first = Math.round(Math.random() * 100); // первый элемент от 0 до 100
+
+    // индекс скрытого элемента всегда меньше длины прогрессии
+    const hiddenElementIndex = Math.floor(Math.random() * progressionLength);
 
     // рассчет элементов прогрессии
     for (let i = 0; i < progressionLength; i++) {
@@ -39,6 +40,8 @@ const createProgression = () => {
         }
         else progression[i] = first + step * i;
     }
+
+    const rightAnswer = first + step * hiddenElementIndex;
 
     return {progression: progression, rightAnswer: rightAnswer};
 }
