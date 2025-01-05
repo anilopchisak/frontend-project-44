@@ -13,7 +13,7 @@ export const index = (game) => {
     let numOfTry = 0;
     
     while(numOfTry < 3) {
-        // ответ пользователя
+        // ответ пользователя (expression: `${num1} ${num2}`)
         const answer = readlineSync.question(`Question: ${game.question[numOfTry].expression}\nYour answer: `);
     
         if (game.question[numOfTry].rightAnswer == answer) {

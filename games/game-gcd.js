@@ -12,8 +12,8 @@ export const gameGcd = () => {
 
 // генерация чисел для игры
 const genData = () => {
-    const num1 = Math.round(Math.random() * 100);
-    const num2 = Math.round(Math.random() * 100);
+    const num1 = Math.round(Math.random() * 200 - 100);
+    const num2 = Math.round(Math.random() * 200 - 100);
     let rightAnswer = euclideanAlgorithm(num1, num2);
 
     return {expression: `${num1} ${num2}`, rightAnswer: rightAnswer};
@@ -21,12 +21,18 @@ const genData = () => {
 
 // алгоритм вычисления НОД
 const euclideanAlgorithm = (num1, num2) => {
-    let a = num1;
-    let b = num2;
+    let a = Math.abs(num1);
+    let b = Math.abs(num2);
 
-    while (a !== b) {
-        if (a > b) a = a - b;
-        else b = b - a;
+    // Если одно из чисел равно 0, возвращаем другое
+    if (a === 0) return b;
+    if (b === 0) return a;
+
+    // Алгоритм Евклида с использованием деления с остатком
+    while (b !== 0) {
+        const temp = b;
+        b = a % b;
+        a = temp;
     }
 
     return a;
