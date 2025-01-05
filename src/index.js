@@ -1,8 +1,8 @@
-import { greeting } from '../src/cli.js';
 import readlineSync from 'readline-sync';
+import greeting from './cli.js';
 
 // интерфейс игры
-export const index = (game) => {
+const index = (game) => {
   // приветствие пользователя и запоминание имени
   const name = greeting();
 
@@ -12,15 +12,14 @@ export const index = (game) => {
   // счетчик попыток
   let numOfTry = 0;
 
-  while(numOfTry < 3) {
+  while (numOfTry < 3) {
     // ответ пользователя (expression: `${num1} ${num2}`)
     const answer = readlineSync.question(`Question: ${game.question[numOfTry].expression}\nYour answer: `);
 
-    if (game.question[numOfTry].rightAnswer == answer) {
-      numOfTry = numOfTry + 1;
+    if (game.question[numOfTry].rightAnswer.toString() === answer) {
+      numOfTry += 1;
       console.log('Correct!');
-    }
-    else {
+    } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${game.question[numOfTry].rightAnswer}'.\nLet's try again, ${name}!`);
       numOfTry = -1;
       break;
@@ -31,3 +30,5 @@ export const index = (game) => {
     console.log(`Congratulations, ${name}!`);
   }
 };
+
+export default index;

@@ -1,6 +1,12 @@
-import { gameDataGen } from './game-layout.js';
+import gameDataGen from './game-layout.js';
 
-export const gameEven = () => {
+// генерация чисел для игры
+const genData = () => {
+  const num = Math.floor(Math.random() * 100);
+  return { expression: num, rightAnswer: num % 2 === 0 ? 'yes' : 'no' };
+};
+
+const gameEven = () => {
   // сборка данных для игры
   const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -10,8 +16,4 @@ export const gameEven = () => {
   return gameEvenData;
 };
 
-// генерация чисел для игры
-const genData = () => {
-  const num = Math.floor(Math.random() * 100);
-  return { expression: num, rightAnswer: num % 2 === 0 ? 'yes' : 'no' };
-};
+export default gameEven;
