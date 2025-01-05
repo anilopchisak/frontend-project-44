@@ -25,27 +25,19 @@ const genData = () => {
 
 const createProgression = () => {
     const progression = [];
-    const progressionLength = Math.round(Math.random() * (10 - 5) + 5);
+    const progressionLength = Math.round(Math.random() * (10 - 5) + 5); 
     const step = Math.round(Math.random() * 10);
-    const hiddenElement = Math.round(Math.random() * progressionLength);
-    let rightAnswer = null;
+    const first = Math.round(Math.random() * 100);
+    const hiddenElementIndex = Math.round(Math.random() * progressionLength);
+    let rightAnswer = first + step * hiddenElementIndex;
 
-    let tmp = 0;
+    // рассчет элементов прогрессии
     for (let i = 0; i < progressionLength; i++) {
-        if (i === 0) { // генерируется первый элемент
-            tmp = Math.round(Math.random() * 100);
-            progression.push(tmp);
+        // если элемент должен быть скрытым
+        if (hiddenElementIndex === i) {
+            progression[i] = '..';
         }
-        else {
-            tmp = tmp + step;
-            if (i === (hiddenElement - 1)) { // если элемент прогрессии должен быть скрытым
-                progression.push('..');
-                rightAnswer = tmp; // число скрытого элемента записывается в правильный ответ
-            }
-            else {
-                progression.push(tmp);
-            }
-        }
+        else progression[i] = first + step * i;
     }
 
     return {progression: progression, rightAnswer: rightAnswer};
