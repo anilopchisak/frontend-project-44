@@ -2,7 +2,7 @@ import {gameDataGen} from "./game-layout.js";
 
 export const gamePrime = () => {
     // сборка данных для игры
-    const rules = "Answer \"yes\" if the number is prime. Otherwise answer \"no\".";
+    const rules = `Answer "yes" if the number is prime. Otherwise answer "no".`;
 
     // вызов функции-интерфейса для создания данных в формате объекта
     const gamePrimeData = gameDataGen(rules, genData);
