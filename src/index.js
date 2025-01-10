@@ -22,12 +22,8 @@ const index = (game) => {
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${game.question[numOfTry].rightAnswer}'.\nLet's try again, ${name}!`);
       numOfTry = -1;
-      break;
+      return;
     }
-  }
-
-  if (numOfTry === 3) {
-    console.log(`Congratulations, ${name}!`);
   }
 };
 
