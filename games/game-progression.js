@@ -1,5 +1,5 @@
 import getRandomNumber from './get-random-number.js';
-import index from '../src/index.js';
+import brainGamesInterface from '../src/index.js';
 
 // генерация прогрессии для игры
 const createProgression = () => {
@@ -31,7 +31,7 @@ const createProgression = () => {
 };
 
 // генерация прогрессии для игры
-const genData = () => {
+const genGameProgressionData = () => {
   const result = createProgression();
   let expression = '';
 
@@ -43,11 +43,11 @@ const genData = () => {
   return { expression, rightAnswer: result.rightAnswer };
 };
 
-const gameProgression = () => {
+const getGameProgressionData = () => {
   // сборка данных для игры
   const rules = 'What number is missing in the progression?';
 
-  return { getData: genData, rules };
+  return { getData: genGameProgressionData, rules };
 };
 
-export default () => index(gameProgression());
+export default () => brainGamesInterface(getGameProgressionData());

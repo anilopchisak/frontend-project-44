@@ -1,8 +1,8 @@
 import getRandomNumber from './get-random-number.js';
-import index from '../src/index.js';
+import brainGamesInterface from '../src/index.js';
 
 // генерация выражений для игры
-const genData = () => {
+const genGameCalcData = () => {
   const operators = ['+', '-', '*'];
   const num1 = getRandomNumber(0, 10);
   const num2 = getRandomNumber(0, 10);
@@ -30,12 +30,12 @@ const genData = () => {
 };
 
 // сборка данных для игры
-const gameCalc = () => {
+const getGameCalcData = () => {
   const rules = 'What is the result of the expression?';
 
-  return { getData: genData, rules };
+  return { getData: genGameCalcData, rules };
 };
 
 // вызывается интерфейс для игры Brain-Calc
 // передаются данные об игре: правила игры, выражения для вычисления, правильные ответы
-export default () => index(gameCalc());
+export default () => brainGamesInterface(getGameCalcData());

@@ -1,5 +1,5 @@
 import getRandomNumber from './get-random-number.js';
-import index from '../src/index.js';
+import brainGamesInterface from '../src/index.js';
 
 // алгоритм вычисления НОД
 const euclideanAlgorithm = (num1, num2) => {
@@ -21,7 +21,7 @@ const euclideanAlgorithm = (num1, num2) => {
 };
 
 // генерация чисел для игры
-const genData = () => {
+const genGameGcdData = () => {
   const num1 = getRandomNumber(-100, 100);
   const num2 = getRandomNumber(-100, 100);
   const rightAnswer = euclideanAlgorithm(num1, num2);
@@ -29,12 +29,12 @@ const genData = () => {
   return { expression: `${num1} ${num2}`, rightAnswer };
 };
 
-const gameGcd = () => {
+const getGameGcdData = () => {
   // сборка данных для игры
   const rules = 'Find the greatest common divisor of given numbers.';
 
-  return { getData: genData, rules };
+  return { getData: genGameGcdData, rules };
 };
 
 // вызывается интерфейс для игры Brain-Gcd
-export default () => index(gameGcd());
+export default () => brainGamesInterface(getGameGcdData());

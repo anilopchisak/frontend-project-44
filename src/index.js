@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 import greeting from '../games/greeting.js';
 
 // интерфейс игры
-const index = (game) => {
+const brainGamesInterface = (game) => {
   // приветствие пользователя и запоминание имени
   const name = greeting();
 
@@ -31,4 +31,4 @@ const index = (game) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export default index;
+export default brainGamesInterface;
