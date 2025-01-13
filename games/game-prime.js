@@ -1,4 +1,5 @@
 import gameDataGen from './game-data-layout.js';
+import getRandomNumber from './get-random-number.js';
 
 const isPrime = (num) => {
   for (let i = 2, s = Math.sqrt(num); i <= s; i += 1) {
@@ -9,7 +10,7 @@ const isPrime = (num) => {
 
 // генерация чисел для игры
 const genData = () => {
-  const num = Math.floor(Math.random() * 100);
+  const num = getRandomNumber(0, 100);
   return { expression: num, rightAnswer: isPrime(num) === true ? 'yes' : 'no' };
 };
 

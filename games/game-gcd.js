@@ -1,4 +1,5 @@
 import gameDataGen from './game-data-layout.js';
+import getRandomNumber from './get-random-number.js';
 
 // алгоритм вычисления НОД
 const euclideanAlgorithm = (num1, num2) => {
@@ -21,8 +22,8 @@ const euclideanAlgorithm = (num1, num2) => {
 
 // генерация чисел для игры
 const genData = () => {
-  const num1 = Math.round(Math.random() * 200 - 100);
-  const num2 = Math.round(Math.random() * 200 - 100);
+  const num1 = getRandomNumber(-100, 100);
+  const num2 = getRandomNumber(-100, 100);
   const rightAnswer = euclideanAlgorithm(num1, num2);
 
   return { expression: `${num1} ${num2}`, rightAnswer };

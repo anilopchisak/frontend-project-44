@@ -1,8 +1,9 @@
 import gameDataGen from './game-data-layout.js';
+import getRandomNumber from './get-random-number.js';
 
 // генерация чисел для игры
 const genData = () => {
-  const num = Math.floor(Math.random() * 100);
+  const num = getRandomNumber(0, 100);
   return { expression: num, rightAnswer: num % 2 === 0 ? 'yes' : 'no' };
 };
 

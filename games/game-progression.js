@@ -1,20 +1,21 @@
 import gameDataGen from './game-data-layout.js';
+import getRandomNumber from './get-random-number.js';
 
 // генерация прогрессии для игры
 const createProgression = () => {
   const progression = [];
 
   // длина прогрессии от 5 до 10
-  const progressionLength = Math.floor(Math.random() * (10 - 5 + 1)) + 5;
+  const progressionLength = getRandomNumber(5, 10);
 
   // шаг от 1 до 10
-  const step = Math.floor(Math.random() * 10) + 1;
+  const step = getRandomNumber(1, 10);
 
   // первый элемент от 0 до 100
-  const first = Math.round(Math.random() * 100);
+  const first = getRandomNumber(0, 100);
 
   // индекс скрытого элемента всегда меньше длины прогрессии
-  const hiddenElementIndex = Math.floor(Math.random() * progressionLength);
+  const hiddenElementIndex = getRandomNumber(0, progressionLength);
 
   // рассчет элементов прогрессии
   for (let i = 0; i < progressionLength; i += 1) {

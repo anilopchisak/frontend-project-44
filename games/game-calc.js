@@ -1,10 +1,11 @@
 import gameDataGen from './game-data-layout.js';
+import getRandomNumber from './get-random-number.js';
 
 // генерация выражений для игры
 const genData = (operators) => {
-  const num1 = Math.floor(Math.random() * 10);
-  const num2 = Math.floor(Math.random() * 10);
-  const operator = operators[Math.floor(Math.random() * 3)];
+  const num1 = getRandomNumber(0, 10);
+  const num2 = getRandomNumber(0, 10);
+  const operator = operators[getRandomNumber(0, 2)];
   let rightAnswer = null;
 
   switch (operator) {
