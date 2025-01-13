@@ -25,6 +25,8 @@ const index = (game) => {
       return;
     }
   }
+
+  console.log(`Congratulations, ${name}!`);
 };
 
 export default index;
