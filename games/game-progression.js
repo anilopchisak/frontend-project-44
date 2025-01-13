@@ -1,4 +1,3 @@
-import gameDataGen from './game-data-layout.js';
 import getRandomNumber from './get-random-number.js';
 import index from '../src/index.js';
 
@@ -48,10 +47,7 @@ const gameProgression = () => {
   // сборка данных для игры
   const rules = 'What number is missing in the progression?';
 
-  // вызов функции-интерфейса для создания данных в формате объекта
-  const gameProgressionData = gameDataGen(rules, genData);
-
-  return gameProgressionData;
+  return { getData: genData, rules };
 };
 
 export default () => index(gameProgression());

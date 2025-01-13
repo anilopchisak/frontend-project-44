@@ -1,4 +1,3 @@
-import gameDataGen from './game-data-layout.js';
 import getRandomNumber from './get-random-number.js';
 import index from '../src/index.js';
 
@@ -8,14 +7,11 @@ const genData = () => {
   return { expression: num, rightAnswer: num % 2 === 0 ? 'yes' : 'no' };
 };
 
+// сборка данных для игры
 const gameEven = () => {
-  // сборка данных для игры
   const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  // вызов функции-интерфейса для создания данных в формате объекта
-  const gameEvenData = gameDataGen(rules, genData);
-
-  return gameEvenData;
+  return { getData: genData, rules };
 };
 
 // вызывается интерфейс для игры Brain-Even

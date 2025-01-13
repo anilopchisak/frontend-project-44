@@ -1,4 +1,3 @@
-import gameDataGen from './game-data-layout.js';
 import getRandomNumber from './get-random-number.js';
 import index from '../src/index.js';
 
@@ -34,10 +33,7 @@ const gameGcd = () => {
   // сборка данных для игры
   const rules = 'Find the greatest common divisor of given numbers.';
 
-  // вызов функции-интерфейса для создания данных в формате объекта
-  const gameGcdData = gameDataGen(rules, genData);
-
-  return gameGcdData;
+  return { getData: genData, rules };
 };
 
 // вызывается интерфейс для игры Brain-Gcd

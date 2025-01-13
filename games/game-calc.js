@@ -1,9 +1,9 @@
-import gameDataGen from './game-data-layout.js';
 import getRandomNumber from './get-random-number.js';
 import index from '../src/index.js';
 
 // генерация выражений для игры
-const genData = (operators) => {
+const genData = () => {
+  const operators = ['+', '-', '*'];
   const num1 = getRandomNumber(0, 10);
   const num2 = getRandomNumber(0, 10);
   const operator = operators[getRandomNumber(0, 2)];
@@ -32,12 +32,8 @@ const genData = (operators) => {
 // сборка данных для игры
 const gameCalc = () => {
   const rules = 'What is the result of the expression?';
-  const operators = ['+', '-', '*'];
 
-  // вызов функции-интерфейса для создания данных в формате объекта
-  const gameCalcData = gameDataGen(rules, genData, operators);
-
-  return gameCalcData;
+  return { getData: genData, rules };
 };
 
 // вызывается интерфейс для игры Brain-Calc

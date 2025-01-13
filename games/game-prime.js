@@ -1,4 +1,3 @@
-import gameDataGen from './game-data-layout.js';
 import getRandomNumber from './get-random-number.js';
 import index from '../src/index.js';
 
@@ -19,10 +18,7 @@ const gamePrime = () => {
   // сборка данных для игры
   const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  // вызов функции-интерфейса для создания данных в формате объекта
-  const gamePrimeData = gameDataGen(rules, genData);
-
-  return gamePrimeData;
+  return { getData: genData, rules };
 };
 
 export default () => index(gamePrime());

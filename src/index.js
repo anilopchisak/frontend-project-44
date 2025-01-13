@@ -10,18 +10,20 @@ const index = (game) => {
   console.log(game.rules);
 
   // счетчик попыток
-  let numOfTry = 0;
+  let stageCount = 0;
 
-  while (numOfTry < 3) {
+  while (stageCount < 3) {
+    // генерируем данные для этапа в формате {expression, rightAnswer}
+    const stageData = game.getData();
+
     // ответ пользователя (expression: `${num1} ${num2}`)
-    const answer = readlineSync.question(`Question: ${game.question[numOfTry].expression}\nYour answer: `);
+    const answer = readlineSync.question(`Question: ${stageData.expression}\nYour answer: `);
 
-    if (game.question[numOfTry].rightAnswer.toString() === answer) {
-      numOfTry += 1;
+    if (stageData.rightAnswer.toString() === answer) {
+      stageCount += 1;
       console.log('Correct!');
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${game.question[numOfTry].rightAnswer}'.\nLet's try again, ${name}!`);
-      numOfTry = -1;
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${stageData.rightAnswer}'.\nLet's try again, ${name}!`);
       return;
     }
   }
