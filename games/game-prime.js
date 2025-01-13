@@ -1,4 +1,4 @@
-import gameDataGen from './game-layout.js';
+import gameDataGen from './game-data-layout.js';
 
 const isPrime = (num) => {
   for (let i = 2, s = Math.sqrt(num); i <= s; i += 1) {

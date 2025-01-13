@@ -1,4 +1,4 @@
-import gameDataGen from './game-layout.js';
+import gameDataGen from './game-data-layout.js';
 
 // генерация выражений для игры
 const genData = (operators) => {

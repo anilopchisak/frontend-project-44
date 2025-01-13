@@ -1,4 +1,4 @@
-import gameDataGen from './game-layout.js';
+import gameDataGen from './game-data-layout.js';
 
 // алгоритм вычисления НОД
 const euclideanAlgorithm = (num1, num2) => {
