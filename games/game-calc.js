@@ -21,7 +21,7 @@ const genData = (operators) => {
       break;
 
     default:
-      break;
+      throw new Error('random operator generation error');
   }
 
   return { expression: `${num1} ${operator} ${num2}`, rightAnswer };
