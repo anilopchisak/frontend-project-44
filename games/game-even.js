@@ -1,5 +1,6 @@
 import gameDataGen from './game-data-layout.js';
 import getRandomNumber from './get-random-number.js';
+import index from '../src/index.js';
 
 // генерация чисел для игры
 const genData = () => {
@@ -17,4 +18,6 @@ const gameEven = () => {
   return gameEvenData;
 };
 
-export default gameEven;
+// вызывается интерфейс для игры Brain-Even
+// передаются данные об игре: правила игры, числа для определения четности, правильные ответы
+export default () => index(gameEven());

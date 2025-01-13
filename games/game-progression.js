@@ -1,5 +1,6 @@
 import gameDataGen from './game-data-layout.js';
 import getRandomNumber from './get-random-number.js';
+import index from '../src/index.js';
 
 // генерация прогрессии для игры
 const createProgression = () => {
@@ -15,7 +16,7 @@ const createProgression = () => {
   const first = getRandomNumber(0, 100);
 
   // индекс скрытого элемента всегда меньше длины прогрессии
-  const hiddenElementIndex = getRandomNumber(0, progressionLength);
+  const hiddenElementIndex = getRandomNumber(0, progressionLength - 1);
 
   // рассчет элементов прогрессии
   for (let i = 0; i < progressionLength; i += 1) {
@@ -53,4 +54,4 @@ const gameProgression = () => {
   return gameProgressionData;
 };
 
-export default gameProgression;
+export default () => index(gameProgression());

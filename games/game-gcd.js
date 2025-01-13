@@ -1,5 +1,6 @@
 import gameDataGen from './game-data-layout.js';
 import getRandomNumber from './get-random-number.js';
+import index from '../src/index.js';
 
 // алгоритм вычисления НОД
 const euclideanAlgorithm = (num1, num2) => {
@@ -39,4 +40,5 @@ const gameGcd = () => {
   return gameGcdData;
 };
 
-export default gameGcd;
+// вызывается интерфейс для игры Brain-Gcd
+export default () => index(gameGcd());

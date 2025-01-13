@@ -1,5 +1,6 @@
 import gameDataGen from './game-data-layout.js';
 import getRandomNumber from './get-random-number.js';
+import index from '../src/index.js';
 
 const isPrime = (num) => {
   for (let i = 2, s = Math.sqrt(num); i <= s; i += 1) {
@@ -24,4 +25,4 @@ const gamePrime = () => {
   return gamePrimeData;
 };
 
-export default gamePrime;
+export default () => index(gamePrime());

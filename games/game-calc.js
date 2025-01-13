@@ -1,5 +1,6 @@
 import gameDataGen from './game-data-layout.js';
 import getRandomNumber from './get-random-number.js';
+import index from '../src/index.js';
 
 // генерация выражений для игры
 const genData = (operators) => {
@@ -39,4 +40,6 @@ const gameCalc = () => {
   return gameCalcData;
 };
 
-export default gameCalc;
+// вызывается интерфейс для игры Brain-Calc
+// передаются данные об игре: правила игры, выражения для вычисления, правильные ответы
+export default () => index(gameCalc());
